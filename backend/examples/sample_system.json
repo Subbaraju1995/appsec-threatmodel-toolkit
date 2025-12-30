@@ -1,0 +1,8 @@
+{
+  "system_name": "Employee Payroll System",
+  "authentication": "JWT",
+  "data_types": ["PII", "Salary Data"],
+  "exposed_interfaces": ["REST API"],
+  "cloud": "AWS",
+  "internet_facing": true
+}

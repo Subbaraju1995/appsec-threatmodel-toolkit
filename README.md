@@ -31,3 +31,15 @@ Mitigation: Encrypt data at rest and in transit
 [Denial of Service] API abuse leading to service unavailability
 Risk Level: Medium
 Mitigation: Implement rate limiting and monitoring
+## Security Value
+
+This tool enables security engineers and developers to:
+- Perform early-stage threat modeling during design reviews
+- Identify STRIDE-based risks before deployment
+- Prioritize remediation using likelihood × impact scoring
+- Standardize AppSec threat analysis across teams
+## Future Enhancements
+- OWASP Top 10 risk mapping
+- Cloud-specific threat libraries (AWS / Azure / GCP)
+- Export results to JSON / CSV
+- CI/CD pipeline integration

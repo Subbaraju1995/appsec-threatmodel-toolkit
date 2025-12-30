@@ -1,6 +1,7 @@
 import json
 from stride import generate_threat_model
 
+
 def main():
     with open("../../examples/sample_system.json") as f:
         system = json.load(f)
@@ -13,10 +14,13 @@ def main():
         print(f"[{item['category']}] {item['threat']}")
         print(f"Likelihood: {item['likelihood']}")
         print(f"Impact: {item['impact']}")
-        print(f"Risk Score: {item['risk_score']} ({item['risk']})")
+        print(f"Risk Score: {item['risk_score']} ({item['severity']})")
         print(f"Mitigation: {item['mitigation']}\n")
+
 
 if __name__ == "__main__":
     main()
+
+
 
 

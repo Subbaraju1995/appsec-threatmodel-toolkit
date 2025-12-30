@@ -1,31 +1,42 @@
+def score_risk(likelihood, impact):
+    score = likelihood * impact
+    if score >= 7:
+        severity = "High"
+    elif score >= 4:
+        severity = "Medium"
+    else:
+        severity = "Low"
+    return score, severity
+
+
 def generate_threat_model(system):
     threats = []
 
-    # Internet-facing system risk
-    if system.get("internet_facing"):
-        threats.append({
-            "category": "Spoofing",
-            "threat": "Unauthorized access via weak authentication",
-            "risk": "High",
-            "mitigation": "Enforce strong authentication and MFA"
-        })
-
-    # Sensitive data risk
+    # Information Disclosure (PII)
     if "PII" in system.get("data_types", []):
+        score, severity = score_risk(likelihood=3, impact=3)
         threats.append({
             "category": "Information Disclosure",
             "threat": "Exposure of sensitive personal data",
-            "risk": "High",
+            "likelihood": 3,
+            "impact": 3,
+            "risk_score": score,
+            "risk": severity,
             "mitigation": "Encrypt data at rest and in transit"
         })
 
-    # API availability risk
+    # Denial of Service
+    score, severity = score_risk(likelihood=2, impact=2)
     threats.append({
         "category": "Denial of Service",
         "threat": "API abuse leading to service unavailability",
-        "risk": "Medium",
+        "likelihood": 2,
+        "impact": 2,
+        "risk_score": score,
+        "risk": severity,
         "mitigation": "Implement rate limiting and monitoring"
     })
 
     return threats
+
 

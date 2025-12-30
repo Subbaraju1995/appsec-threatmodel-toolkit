@@ -11,9 +11,12 @@ def main():
 
     for item in threats:
         print(f"[{item['category']}] {item['threat']}")
-        print(f"Risk Level : {item['risk']}")
-        print(f"Mitigation : {item['mitigation']}\n")
+        print(f"Likelihood: {item['likelihood']}")
+        print(f"Impact: {item['impact']}")
+        print(f"Risk Score: {item['risk_score']} ({item['risk']})")
+        print(f"Mitigation: {item['mitigation']}\n")
 
 if __name__ == "__main__":
     main()
+
 
